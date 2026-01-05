@@ -22,7 +22,7 @@ const Narrative: React.FC = () => {
     },
     { 
       title: "Sound", 
-      desc: "Immersive journey through instruments of wind, voice, gongs, singing bowls, and trance-state rhythm.", 
+      desc: "Immersive journey through instruments of wind and flutes, voice, gongs, chimes, crystal & Himalayan singing bowls, and trance-state drumming.", 
       image: "/step-4.jpg",
       rotation: "-rotate-2"
     },
