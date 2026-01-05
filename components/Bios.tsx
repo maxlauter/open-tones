@@ -16,8 +16,8 @@ const Bios: React.FC = () => {
     },
     {
       name: "Sam Haddix",
-      title: "Facilitator / Social Work / Chaplan",
-      desc: "A founding pillar of the Open Tones ensemble, Sam brings a deep sensitivity to harmonic instrumentation and wind textures. His work focuses on the intersection of silence and subtle vibration, facilitating spaces where participants can encounter the delicate nuances of their own internal listening.",
+      title: "Facilitator / Social Work / Care",
+      desc: "Sam Haddix is a composer, ordained Sōtō Zen priest, and palliative care chaplain. Integrating his formal musical training with the contemplative depth of Zen practice, he uses sound as a vessel for compassionate presence. His work serves as a form of spiritual care, creating resonant spaces for grounding, grief, and profound healing.",
       image: "/bio-sam.jpg"
     },
     {
@@ -28,8 +28,8 @@ const Bios: React.FC = () => {
     },
     {
       name: "Briana Weiner",
-      title: "Voice / Ritual / Psychology",
-      desc: "An expert in spatial attunement and ceremonial ritual, Briana's background in psychological facilitation and ceremony provides a secure container for deep exploration.",
+      title: "Voice / Ritual / Psychotherapy",
+      desc: "A licensed psychotherapist and songwriter, Briana blends clinical expertise in proven theraputic methodologies with sonic healing. She uses music and mindfulness to craft immersive soundscapes for emotional release.",
       image: "/bio-brianna.jpg"
     }
   ];

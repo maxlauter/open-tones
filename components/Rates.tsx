@@ -8,7 +8,7 @@ const Rates: React.FC = () => {
       tier: "Community Offering", 
       type: BookingType.CORPORATE,
       isNonprofit: true,
-      description: "Accessible sessions for libraries, schools, and cultural spaces.", 
+      description: "Accessible sessions for non-profits, libraries, schools, and community spaces.", 
       context: "Pay-What-You-Can" 
     },
     { 
