@@ -5,7 +5,7 @@ import Events from './components/Events';
 import Narrative from './components/Narrative';
 import Rates from './components/Rates';
 import Bios from './components/Bios';
-import Calculator from './components/Calculator';
+import Form from './components/Form';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -19,7 +19,7 @@ const App: React.FC = () => {
           <Events />
           <Narrative />
           <Rates />
-          <Calculator />
+          <Form />
           <Bios />
         </main>
         <Footer />

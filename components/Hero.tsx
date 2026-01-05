@@ -5,8 +5,8 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative flex flex-col items-center justify-start overflow-hidden bg-dark">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Video Background - pointer-events-none added to prevent speed overlays */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <video 
           autoPlay muted loop playsInline 
           className="w-full h-full object-cover opacity-20 saturate-0 contrast-125 scale-110"
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
         <div className="space-y-8">
           <div className="w-12 h-px bg-cream/20 mx-auto"></div>
           <p className="text-xl md:text-2xl font-serif italic font-light text-cream/90 leading-relaxed max-w-2xl mx-auto">
-            Open Tones is a collective of artists and wellness practitioners offering sound-based mindfulness programs encouraging alignment, healing, and growth through deep listening.
+            Open Tones is a collective of artists and wellness practitioners offering sound-based mindfulness programs encouraging alignment, healing, and transformation through deep listening.
           </p>
         </div>
 

@@ -4,25 +4,25 @@ const Narrative: React.FC = () => {
   const experiences = [
     { 
       title: "Intention", 
-      desc: "An invitation to channel intention in a shared container.", 
+      desc: "An invitation to channel intention in a safe, facilitated space.", 
       image: "/step-1.jpg",
       rotation: "rotate-3"
     },
     { 
-      title: "Breathwork", 
-      desc: "Breathwork to transition from external noise to internal presence.", 
+      title: "Breathwork & Movement", 
+      desc: "Guided breath and movement to transition from external noise to internal presence.", 
       image: "/step-2.jpg",
       rotation: "-rotate-3"
     },
     { 
       title: "Meditation", 
-      desc: "Guided meditation to sensitize the body to the coming inner shifts.", 
+      desc: "Guided meditation to sensitize the mind and body to subtle shifts.", 
       image: "/step-3.jpg",
       rotation: "rotate-2"
     },
     { 
       title: "Sound", 
-      desc: "Immersive journey through wind, voice, gongs, and trance-state rhythm.", 
+      desc: "Immersive journey through instruments of wind, voice, gongs, singing bowls, and trance-state rhythm.", 
       image: "/step-4.jpg",
       rotation: "-rotate-2"
     },
@@ -35,14 +35,15 @@ const Narrative: React.FC = () => {
   ];
 
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
 
   useEffect(() => {
+    // Reveal animation observer
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('step-visible');
           entry.target.classList.remove('step-hidden');
-          
           if (entry.target.classList.contains('journey-path-svg')) {
              (entry.target as HTMLElement).style.opacity = '1';
           }
@@ -53,7 +54,45 @@ const Narrative: React.FC = () => {
     const elements = document.querySelectorAll('.step-animate');
     elements.forEach(el => observerRef.current?.observe(el));
 
-    return () => observerRef.current?.disconnect();
+    // Mobile scroll focus effect
+    const handleScroll = () => {
+      if (window.innerWidth >= 768) {
+        // Reset filters for desktop to use hover states instead
+        imageRefs.current.forEach(img => {
+          if (img) img.style.filter = '';
+        });
+        return;
+      }
+
+      const viewportCenter = window.innerHeight / 2;
+      
+      imageRefs.current.forEach(img => {
+        if (!img) return;
+        const rect = img.getBoundingClientRect();
+        const elementCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = Math.abs(viewportCenter - elementCenter);
+        
+        // Calculate focus: 0 at center, 1 at edges of a 500px range
+        const range = window.innerHeight * 0.6;
+        const focusFactor = Math.min(distanceFromCenter / (range / 2), 1);
+        
+        // Map focusFactor to grayscale (0% at center, 100% at edges)
+        // Also subtle opacity shift
+        const grayscale = focusFactor * 100;
+        const opacity = 0.8 - (focusFactor * 0.3); // 0.8 at center, 0.5 at edges
+        
+        img.style.filter = `grayscale(${grayscale}%)`;
+        img.style.opacity = opacity.toString();
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      observerRef.current?.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const pathD = `
@@ -137,10 +176,12 @@ const Narrative: React.FC = () => {
 
                 <div className={`flex-1 flex ${i % 2 !== 0 ? 'justify-end md:justify-end md:pr-16' : 'justify-start md:justify-start md:pl-16'} z-10`}>
                   <div className={`w-64 md:w-96 aspect-square rounded-sm overflow-hidden bg-white/5 border border-white/10 shadow-2xl transition-all duration-1000 group-hover:scale-105 group-hover:border-white/30 group-hover:rotate-0 ${exp.rotation}`}>
+                    {/* Fixed ref assignment to return void */}
                     <img 
+                      ref={el => { imageRefs.current[i] = el; }}
                       src={exp.image} 
                       alt={exp.title} 
-                      className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all grayscale hover:grayscale-0 duration-1000"
+                      className="w-full h-full object-cover opacity-50 md:grayscale md:group-hover:grayscale-0 md:group-hover:opacity-80 transition-all duration-1000"
                     />
                   </div>
                 </div>
