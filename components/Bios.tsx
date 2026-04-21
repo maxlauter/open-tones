@@ -4,14 +4,14 @@ const Bios: React.FC = () => {
   const bios = [
     {
       name: "David Christian Nuss",
-      title: "Percussion / Engineer / Theology",
-      desc: "A Brooklyn-based drummer and engineer with extensive experience across genres, including Director of Symphony Orchestra and performance at Holland's premier metal festival Roadburn. With training from Union Theological Seminary, the Zen Center for Contemplative Care, and Kripalu's School of Ayurveda, David brings careful listening into his musical practice, thriving on the unknown as an entry point to transformation. He currently runs recording sessions and rehearsals from Silver Cave Studios.",
+      title: "Percussion / Engineer / Meditation",
+      desc: "David Nuss is a drummer and engineer with extensive experience across genres, with international performance experience at festivals including Primavera (ES) and Roadburn (NL).  Utilizing training from Union Theological Seminary and the Zen Center for Contemplative Care as a chaplain and meditation instructor, David brings careful listening into his musical practice, thriving on the unknown as an entry point to transformation. In Open Tones, he offers consciousness altering techniques such as trance drumming to enable participants to discover their own spiritual resources, transform their lives, and learn to help others.",
       image: "/bio-david.jpg"
     },
     {
       name: "Maximilian Lauter",
       title: "Facilitator / Interactive Design / Yoga",
-      desc: "As an artist, innovation consultant, and certified facilitator, Maximilian leads programs based in somatic and creative practice to empower transformation. He brings 15+ years of experience producing with world-class cultural institutions, festivals, and global brands—from The Met and Sonar, to Meta to the New York Times. As a trained musician and Katonah Yoga® teacher, he weaves live instrumentation and spatial audio with mindfulness techniques to cultivate deep internal and group resonance.",
+      desc: "As an artist, innovation strategist, and facilitator, Maximilian leads programs based in somatic and creative practice to empower transformation. He brings 15+ years of experience producing with world-class cultural institutions, festivals, and global brands—from The Met and Sonar+D, to Meta and the New York Times. As a trained musician and certified yoga teacher, he weaves live instrumentation and spatial audio with mindfulness techniques to cultivate deep internal and group resonance.",
       image: "/bio-maximilian.jpg"
     },
     {
