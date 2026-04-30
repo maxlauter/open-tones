@@ -29,7 +29,7 @@ const Bios: React.FC = () => {
     {
       name: "Briana Weiner",
       title: "Voice / Ritual / Psychotherapy",
-      desc: "A licensed psychotherapist and songwriter, Briana blends clinical expertise in proven theraputic methodologies with sonic healing. She uses music and mindfulness to craft immersive soundscapes for emotional release.",
+      desc: "Briana is a licensed psychotherapist, trained vocalist, and meditator. She blends her clinical expertise in mindfulness-based methodologies with sonic healing, and uses song to help participants travel into the unspoken parts of themselves to facilitate deep emotional release and integration. Her work encourages moving beyond the noise of the mind and reconnecting with the wisdom of the heart.",
       image: "/bio-brianna.jpg"
     }
   ];

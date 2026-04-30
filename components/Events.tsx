@@ -69,6 +69,7 @@ const ALL_EVENTS: EventItem[] = [
     start: new Date(2026, 5, 12, 18, 0),
     title: 'Sound Meditation & Healing Journey',
     venue: 'Reforesters Laboratory, Brooklyn',
+    link: 'https://luma.com/of8b0v10',
   },
   {
     start: new Date(2026, 6, 12, 16, 0),
@@ -122,9 +123,21 @@ const Events: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col items-center">
-                  <p className="text-sm md:text-base font-light text-cream/60 tracking-widest font-sans transition-colors group-hover:text-cream/80 max-w-[200px]">
-                    {event.venue}
-                  </p>
+                  {event.venue === 'Reforesters Laboratory, Brooklyn' ? (
+                    <a
+                      href="https://maps.app.goo.gl/dkigftTyKC9fqMWDA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm md:text-base font-light text-cream/60 tracking-widest font-sans transition-colors group-hover:text-cream/80 hover:text-cream max-w-[200px]"
+                      aria-label="Open Reforesters Laboratory on map"
+                    >
+                      {event.venue}
+                    </a>
+                  ) : (
+                    <p className="text-sm md:text-base font-light text-cream/60 tracking-widest font-sans transition-colors group-hover:text-cream/80 max-w-[200px]">
+                      {event.venue}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex justify-center">
@@ -138,12 +151,15 @@ const Events: React.FC = () => {
                       Tickets
                     </a>
                   ) : (
-                    <span
-                      className="text-[10px] uppercase tracking-[0.35em] font-bold text-cream/50 whitespace-nowrap"
-                      aria-label="Tickets on sale soon"
+                    <a
+                      href="https://www.instagram.com/open.tones/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] md:text-xs font-medium text-cream/70 hover:text-cream transition-colors leading-relaxed max-w-[220px]"
+                      aria-label="Follow us on Instagram for ticket announcement"
                     >
-                      Tickets on Sale Soon!
-                    </span>
+                      Follow us on <span className="underline underline-offset-4 decoration-cream/50">Instagram</span> for ticket announcement
+                    </a>
                   )}
                 </div>
               </div>
